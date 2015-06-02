@@ -83,8 +83,10 @@
 
 			init();
 			//var an = setTimeout(function(){ animate(); }, 500);
-			$( "loading" ).style.display = "none";
-			animate();
+			$(window).load(function() {
+					$( "loading" ).style.display = "none";
+					animate();
+			});
 
 
 			function init() {
