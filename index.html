@@ -83,7 +83,14 @@
 
 			init();
 			//var an = setTimeout(function(){ animate(); }, 500);
-			$( "loading" ).style.display = "none";
+
+			THREE.DefaultLoadingManager.onProgress = function ( item, loaded, total ) {
+				console.log( item, loaded, total );
+				if (loaded==total) {
+					$( "loading" ).style.display = "none";
+					$( "hold" ).style.visibility = "visible";
+				}
+			};
 			animate();
 
 
@@ -369,15 +376,6 @@
                 container.appendChild( renderer.domElement );
 
                 window.addEventListener( 'resize', onWindowResize, false );
-
-
-				THREE.DefaultLoadingManager.onProgress = function ( item, loaded, total ) {
-    				console.log( item, loaded, total );
-					if (loaded==total) {
-						$( "hold" ).style.visibility = "visible";
-					}
-				};
-
 
 
 			}
