@@ -92,6 +92,7 @@
                 container = document.createElement( 'div' );
 				container.id = 'hold';
                 document.body.appendChild( container );
+				$( "hold" ).style.display = "none";
 
 
                 camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 1, 20000 );
