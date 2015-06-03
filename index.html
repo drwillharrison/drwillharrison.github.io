@@ -345,9 +345,6 @@
 				});
 
 
-				THREE.DefaultLoadingManager.onProgress = function ( item, loaded, total ) {
-    				console.log( item, loaded, total );
-				};
 				//initiated = true;
             	//clearTimeout(an);
 
@@ -373,7 +370,12 @@
 
                 window.addEventListener( 'resize', onWindowResize, false );
 
-				$( "hold" ).style.visibility = "visible";
+
+				THREE.DefaultLoadingManager.onProgress = function ( item, loaded, total ) {
+    				console.log( item, loaded, total );
+					if loaded==total: $( "hold" ).style.visibility = "visible";
+				};
+
 
 
 			}
