@@ -344,7 +344,6 @@
 
 				});
 
-				$( "hold" ).style.visibility = "visible";
 
             	//initiated = true;
             	//clearTimeout(an);
@@ -370,6 +369,8 @@
                 container.appendChild( renderer.domElement );
 
                 window.addEventListener( 'resize', onWindowResize, false );
+
+				$( "hold" ).style.visibility = "visible";
 
 
 			}
