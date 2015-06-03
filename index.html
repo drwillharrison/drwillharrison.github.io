@@ -89,8 +89,7 @@
 
 			function init() {
 
-                container = document.createElement( 'div' );
-                document.body.appendChild( container );
+
 
                 camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 1, 20000 );
                 // camera.position.set( 3, 0.5, 3 );
@@ -341,7 +340,8 @@
 
 				});
 
-
+				container = document.createElement( 'div' );
+                document.body.appendChild( container );
 
             	//initiated = true;
             	//clearTimeout(an);
