@@ -345,7 +345,10 @@
 				});
 
 
-            	//initiated = true;
+				THREE.DefaultLoadingManager.onProgress = function ( item, loaded, total ) {
+    				console.log( item, loaded, total );
+				};
+				//initiated = true;
             	//clearTimeout(an);
 
     	        //loader.load( 'lego4.stl')
