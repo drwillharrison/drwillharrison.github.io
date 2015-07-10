@@ -64,6 +64,8 @@
 			var y = [-50,100,-100,0,50,-50,-100,100,50,0,-100,100,-50,50,0]
 			var z = [100,50,0,-100,-50,-100,0,100,-50,50,50,-50,-100,0,100]
 
+			// var meshs = new Array();
+
 			var mouseX = 0, mouseY = 0;
 
 			var windowHalfX = window.innerWidth / 2;
@@ -71,315 +73,15 @@
 
 			document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
+			// var initiated = false;
+
 			function $( id ) {
 
 				return document.getElementById( id );
 
 			}
 
-			container = document.createElement( 'div' );
-			container.id = 'hold';
-			container.style.visibility = "hidden";
-			document.body.appendChild( container );
-
-
-			camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 1, 20000 );
-			camera.position.z = 200;
-
-			scene = new THREE.Scene();
-
-			// load bricks
-
-			var loader = new THREE.STLLoader();
-			loader.load( stl[0], function (geometry) {
-
-				var material = new THREE.MeshPhongMaterial( { ambient: colour[0], color: colour[0], specular: 0x111111, shininess: 200 } );
-
-				mesh = new THREE.Mesh( geometry, material );
-
-				mesh.position.set( x[0], y[0], z[0] );
-
-				mesh.castShadow = true;
-				mesh.receiveShadow = true;
-
-				setTimeout(function () {
-					scene.add( mesh );
-				}, 500);
-
-			});
-
-			var loader6 = new THREE.STLLoader();
-			loader6.load( stl[1], function (geometry6) {
-
-				var material6 = new THREE.MeshPhongMaterial( { ambient: colour[1], color: colour[1], specular: 0x111111, shininess: 200 } );
-
-				mesh6 = new THREE.Mesh( geometry6, material6 );
-
-				mesh6.position.set( x[6], y[6], z[6] );
-
-				mesh6.castShadow = true;
-				mesh6.receiveShadow = true;
-
-				setTimeout(function () {
-					scene.add( mesh6 );
-				}, 1000);
-
-			});
-
-			var loader12 = new THREE.STLLoader();
-			loader12.load( stl[2], function (geometry12) {
-
-				var material12 = new THREE.MeshPhongMaterial( { ambient: colour[2], color: colour[2], specular: 0x111111, shininess: 200 } );
-
-				mesh12 = new THREE.Mesh( geometry12, material12 );
-
-				mesh12.position.set( x[12], y[12], z[12] );
-
-				mesh12.castShadow = true;
-				mesh12.receiveShadow = true;
-
-				setTimeout(function() {
-					scene.add( mesh12 );
-				}, 2000);
-
-			});
-
-			var loader3 = new THREE.STLLoader();
-			loader3.load( stl[0], function (geometry3) {
-
-			    var material3 = new THREE.MeshPhongMaterial( { ambient: colour[3], color: colour[3], specular: 0x111111, shininess: 200 } );
-
-			    mesh3 = new THREE.Mesh( geometry3, material3 );
-
-				mesh3.position.set( x[3], y[3], z[3] );
-
-			    mesh3.castShadow = true;
-				mesh3.receiveShadow = true;
-
-			    setTimeout(function() {
-					scene.add( mesh3 );
-				}, 3000);
-
-			});
-
-			var loader9 = new THREE.STLLoader();
-			loader9.load( stl[1], function (geometry9) {
-
-				var material9 = new THREE.MeshPhongMaterial( { ambient: colour[4], color: colour[4], specular: 0x111111, shininess: 200 } );
-
-				mesh9 = new THREE.Mesh( geometry9, material9 );
-
-				mesh9.position.set( x[9], y[9], z[9] );
-
-				mesh9.castShadow = true;
-				mesh9.receiveShadow = true;
-
-				setTimeout(function() {
-					scene.add( mesh9 );
-				}, 4000);
-
-			});
-
-			var loader10 = new THREE.STLLoader();
-			loader10.load( stl[2], function (geometry10) {
-
-				var material10 = new THREE.MeshPhongMaterial( { ambient: colour[0], color: colour[0], specular: 0x111111, shininess: 200 } );
-
-				mesh10 = new THREE.Mesh( geometry10, material10 );
-
-				mesh10.position.set( x[10], y[10], z[10] );
-
-				mesh10.castShadow = true;
-				mesh10.receiveShadow = true;
-
-				setTimeout(function() {
-					scene.add( mesh10 );
-				}, 5000);
-
-			});
-
-			var loader1 = new THREE.STLLoader();
-			loader1.load( stl[0], function (geometry1) {
-
-				var material1 = new THREE.MeshPhongMaterial( { ambient: colour[1], color: colour[1], specular: 0x111111, shininess: 200 } );
-
-				mesh1 = new THREE.Mesh( geometry1, material1 );
-
-				mesh1.position.set( x[1], y[1], z[1] );
-
-				mesh1.castShadow = true;
-				mesh1.receiveShadow = true;
-
-				setTimeout(function () {
-					scene.add( mesh1 );
-				}, 6000);
-
-			});
-
-			var loader7 = new THREE.STLLoader();
-			loader7.load( stl[1], function (geometry7) {
-
-				var material7 = new THREE.MeshPhongMaterial( { ambient: colour[2], color: colour[2], specular: 0x111111, shininess: 200 } );
-
-				mesh7 = new THREE.Mesh( geometry7, material7 );
-
-				mesh7.position.set( x[7], y[7], z[7] );
-
-				mesh7.castShadow = true;
-				mesh7.receiveShadow = true;
-
-				setTimeout(function () {
-					scene.add( mesh7 );
-				}, 7000);
-
-			});
-
-			var loader13 = new THREE.STLLoader();
-			loader13.load( stl[2], function (geometry13) {
-
-				var material13 = new THREE.MeshPhongMaterial( { ambient: colour[3], color: colour[3], specular: 0x111111, shininess: 200 } );
-
-				mesh13 = new THREE.Mesh( geometry13, material13 );
-
-				mesh13.position.set( x[13], y[13], z[13] );
-
-				mesh13.castShadow = true;
-				mesh13.receiveShadow = true;
-
-				setTimeout(function () {
-					scene.add( mesh13 );
-				}, 8000);
-
-			});
-
-			var loader4 = new THREE.STLLoader();
-			loader4.load( stl[0], function (geometry4) {
-
-				var material4 = new THREE.MeshPhongMaterial( { ambient: colour[4], color: colour[4], specular: 0x111111, shininess: 200 } );
-
-				mesh4 = new THREE.Mesh( geometry4, material4 );
-
-				mesh4.position.set( x[4], y[4], z[4] );
-
-				mesh4.castShadow = true;
-				mesh4.receiveShadow = true;
-
-				setTimeout(function () {
-					scene.add( mesh4 );
-				}, 9000);
-
-			});
-
-			var loader5 = new THREE.STLLoader();
-			loader5.load( stl[1], function (geometry5) {
-
-				var material5 = new THREE.MeshPhongMaterial( { ambient: colour[0], color: colour[0], specular: 0x111111, shininess: 200 } );
-
-				mesh5 = new THREE.Mesh( geometry5, material5 );
-
-				mesh5.position.set( x[5], y[5], z[5] );
-
-				mesh5.castShadow = true;
-				mesh5.receiveShadow = true;
-
-				setTimeout(function () {
-					scene.add( mesh5 );
-				}, 10000);
-
-			});
-
-			var loader11 = new THREE.STLLoader();
-			loader11.load( stl[2], function (geometry11) {
-
-				var material11 = new THREE.MeshPhongMaterial( { ambient: colour[1], color: colour[1], specular: 0x111111, shininess: 200 } );
-
-				mesh11 = new THREE.Mesh( geometry11, material11 );
-
-				mesh11.position.set( x[11], y[11], z[11] );
-
-				mesh11.castShadow = true;
-				mesh11.receiveShadow = true;
-
-				setTimeout(function () {
-					scene.add( mesh11 );
-				}, 11000);
-
-			});
-
-			var loader2 = new THREE.STLLoader();
-			loader2.load( stl[0], function (geometry2) {
-
-			    var material2 = new THREE.MeshPhongMaterial( { ambient: colour[2], color: colour[2], specular: 0x111111, shininess: 200 } );
-
-			    mesh2 = new THREE.Mesh( geometry2, material2 );
-
-				mesh2.position.set( x[2], y[2], z[2] );
-
-			    mesh2.castShadow = true;
-				mesh2.receiveShadow = true;
-
-				setTimeout(function () {
-					scene.add( mesh2 );
-				}, 12000);
-
-			});
-
-			var loader8 = new THREE.STLLoader();
-			loader8.load( stl[1], function (geometry8) {
-
-				var material8 = new THREE.MeshPhongMaterial( { ambient: colour[3], color: colour[3], specular: 0x111111, shininess: 200 } );
-
-				mesh8 = new THREE.Mesh( geometry8, material8 );
-
-				mesh8.position.set( x[8], y[8], z[8] );
-
-				mesh8.castShadow = true;
-				mesh8.receiveShadow = true;
-
-				setTimeout(function () {
-					scene.add( mesh8 );
-				}, 13000);
-
-			});
-
-			var loader14 = new THREE.STLLoader();
-			loader14.load( stl[2], function (geometry14) {
-
-				var material14 = new THREE.MeshPhongMaterial( { ambient: colour[4], color: colour[4], specular: 0x111111, shininess: 200 } );
-
-				mesh14 = new THREE.Mesh( geometry14, material14 );
-
-				mesh14.position.set( x[14], y[14], z[14] );
-
-				mesh14.castShadow = true;
-				mesh14.receiveShadow = true;
-
-				setTimeout(function () {
-					scene.add( mesh14 );
-				}, 14000);
-
-			});
-
-			// lights
-
-			scene.add( new THREE.AmbientLight( 0x777777 ) );
-			addShadowedLight( 1, 1, 1, 0xffffff, 0.35 );
-			addShadowedLight( 0.5, 1, -1, 0xffaa00, 0.5 );
-
-			//scene.fog = new THREE.Fog( 0x72645b, 2, 15 );
-
-			// renderer
-
-			renderer = new THREE.WebGLRenderer( { antialias: true } );
-			renderer.setClearColor( 0xffffff );
-			renderer.setSize( window.innerWidth, window.innerHeight );
-
-			container.appendChild( renderer.domElement );
-
-			window.addEventListener( 'resize', onWindowResize, false );
-
-			// init();
-
+			init();
 			//var an = setTimeout(function(){ animate(); }, 500);
 
 			THREE.DefaultLoadingManager.onProgress = function ( item, loaded, total ) {
@@ -395,7 +97,17 @@
 
 			function init() {
 
+                container = document.createElement( 'div' );
+				container.id = 'hold';
+				container.style.visibility = "hidden";
+                document.body.appendChild( container );
 
+
+                camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 1, 20000 );
+                // camera.position.set( 3, 0.5, 3 );
+                camera.position.z = 200;
+
+                scene = new THREE.Scene();
 
                 // var i = 0;
                 // while (i < 2) {
