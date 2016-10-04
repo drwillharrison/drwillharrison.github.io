@@ -1,0 +1,39 @@
+.page-header {
+    border-bottom: 0;
+}
+#throttleSlider {
+    align-content: center;
+    padding: 30px;
+}
+#throttleSlider .slider-track {
+    width: 20px;
+    background: #4da6ff;
+    float: center;
+}
+#throttleSlider .slider-selection {
+	background: #cccccc;
+}
+#throttleSlider .slider-handle {
+    height: 30px;
+    width: 30px;
+    background: gray;
+}
+.material-icons.md-16 {
+    font-size: 15px;
+    color: #999999;
+    position: absolute;
+    top: 2px;
+    right: 0px;
+    cursor: pointer;
+}
+label {
+    position:relative;
+    padding-right: 24px;
+}
+.material-icons.sm-12:hover {
+    color: lightblue 
+}
+.popover-content {
+    min-width: 220px;
+    font-size: 13px;
+}
