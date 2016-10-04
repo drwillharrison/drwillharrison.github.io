@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Jet Engine</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/6.0.16/css/bootstrap-slider.min.css" rel="stylesheet">
+        <link href="css/jet.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h1>The Jet Engine</h1>
+                <p class="lead">Adjust the throttle to see how the performance of a miniature jet engine changes....</p>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">
+                    <div class="row">
+                        <label>Throttle  <span class="material-icons md-16" data-toggle="popover" data-placement="right" data-title="Throttle" data-content="Move the throttle to see the effect on jet engine performance.">info_outline</span></label>
+                    </div>
+                    <input id="throttle" data-slider-id="throttleSlider" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0" data-slider-orientation="vertical" data-slider-tooltip="hide">
+                </div>
+                <div class="col-xs-10">
+                    <img id="mini-jet" src="img/miniJet-annotated.png" alt="Mini Jet Engine" style="width:543px;height:262px;">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-3 col-sm-2">
+                    <div class="row">
+                        <label>RPM  <span class="material-icons md-16" data-toggle="popover" data-title="RPM" data-content="Shaft revolutions per minute">info_outline</span></label>
+                    </div>
+                    <div class="row">
+                        <input class="rpmknob" data-angleOffset=-125 data-angleArc=250 data-fgColor="#00ABC6" data-rotation="clockwise" data-width="95%" value="35000">
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-2">
+                  <div class="row">
+                        <label>V<sub>Air</sub>  <span class="material-icons md-16" data-toggle="popover" data-title="Volumetric air flow" data-content="Volumetric rate of air flowing through the jet engine.">info_outline</span></label>
+                    </div>
+                    <div class="row">
+                        <input class="airknob" data-angleOffset=-125 data-angleArc=250 data-fgColor="#6699ff" data-rotation="clockwise" data-width="95%" value="9">
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-2">
+                  <div class="row">
+                        <label>T<sub>1</sub>  <span class="material-icons md-16" data-toggle="popover" data-title="Compressor exit temperature" data-content="The temperature measured between compressor and combustor">info_outline</span></label>
+                    </div>
+                    <div class="row">
+                        <input class="t1knob" data-angleOffset=-125 data-angleArc=250 data-fgColor="#ffbf00" data-rotation="clockwise" data-width="95%" value="27">
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-2">
+                  <div class="row">
+                        <label>T<sub>2</sub>  <span class="material-icons md-16" data-toggle="popover" data-title="Combustor exit temperature" data-content="The temperature measured between combustor and turbine, also known as the turbine entry temperature">info_outline</span></label>
+                    </div>
+                    <div class="row">
+                        <input class="t2knob" data-angleOffset=-125 data-angleArc=250 data-fgColor="#ff4000" data-rotation="clockwise" data-width="95%" value="932">
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-2">
+                  <div class="row">
+                        <label>T<sub>3</sub>  <span class="material-icons md-16" data-toggle="popover" data-title="Turbine exit temperature" data-content="The temperature measured after the turbine stage.">info_outline</span></label>
+                    </div>
+                    <div class="row">
+                        <input class="t3knob" data-angleOffset=-125 data-angleArc=250 data-fgColor="#ff8000" data-rotation="clockwise" data-width="95%" value="595">
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-2">
+                    <div class="row">
+                        <label>S  <span class="material-icons md-16"  data-toggle="popover" data-title="Thrust" data-content="Measured engine thrust">info_outline</span></label>
+                    </div>
+                    <div class="row">
+                        <input class="thrustknob" data-angleOffset=-125 data-angleArc=250 data-fgColor="#8000ff" data-rotation="clockwise" data-width="95%" value="4">
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-2">
+                  <div class="row">
+                        <label>Fuel use  <span class="material-icons md-16" data-toggle="popover" data-title="Fuel consumption" data-content="The rate of fuel use in the jet engine, measured in litres per hour.">info_outline</span></label>
+                    </div>
+                    <div class="row">
+                        <input class="fuelknob" data-angleOffset=-125 data-angleArc=250 data-fgColor="#000000" data-rotation="clockwise" data-width="95%" value="5">
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-2">
+                    <div class="row">
+                        <label>P<sub>1</sub>  <span class="material-icons md-16" data-toggle="popover" data-title="Relative combustor pressure" data-content="Measured combustor pressure above atmospheric pressure. This can be assumed to be the maximum pressure in the jet engine.">info_outline</span></label>
+                    </div>
+                    <div class="row">
+                        <input class="P1knob" data-angleOffset=-125 data-angleArc=250 data-fgColor="#0000cc" data-rotation="clockwise" data-width="95%" data-step=".01" value="0.06">
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-2">
+                    <div class="row">
+                        <label>&#x3B7<sub>(Ideal)</sub>  <span class="material-icons md-16" data-toggle="popover" data-title="Ideal thermal efficiency" data-content="The ideal thermal efficiency is based on the ratio of max and min pressure in the engine.">info_outline</span></label>
+                    </div>
+                    <div class="row">
+                        <input class="idealefficiencyknob" data-angleOffset=-125 data-angleArc=250 data-fgColor="#339933" data-rotation="clockwise" data-width="95%" value="2">
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-2">
+                  <div class="row">
+                        <label>P<sub>(Thermal)</sub>  <span class="material-icons md-16" data-toggle="popover" data-title="Available thermal power" data-content="The available thermal power is based on the calorific value of the fuel used.">info_outline</span></label>
+                    </div>
+                    <div class="row">
+                        <input class="thermalknob" data-angleOffset=-125 data-angleArc=250 data-fgColor="#cc0066" data-rotation="clockwise" data-width="95%" value="49">
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-2">
+                    <div class="row">
+                        <label>P<sub>(Useful)</sub>  <span class="material-icons md-16" data-toggle="popover" data-title="Useful power output" data-content="The useful power output is based on the mass of air flowing through the engine and it's increase in velocity.">info_outline</span></label>
+                    </div>
+                    <div class="row">
+                        <input class="powerknob" data-angleOffset=-125 data-angleArc=250 data-fgColor="#cc66ff" data-rotation="clockwise" data-width="95%" value="1">
+                    </div>
+                </div>
+               <div class="col-xs-3 col-sm-2">
+                    <div class="row">
+                        <label>&#x3B7<sub>(Actual)</sub>  <span class="material-icons md-16" data-toggle="popover" data-title="Actual thermal efficiency" data-content="The actual efficiency is based on a ratio of useful power output to available thermal power input (from fuel).">info_outline</span></label>
+                    </div>
+                    <div class="row">
+                        <input class="actualefficiencyknob" data-angleOffset=-125 data-angleArc=250 data-fgColor="#66EE66" data-rotation="clockwise" data-width="95%" value="2">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/6.0.16/bootstrap-slider.min.js"></script>
+        <script src="js/jquery.knob.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("span").popover(
+                {     'trigger': 'focus click',
+                    'placement': 'top'});
+    });
+
+    $("#throttle").slider({
+        reversed : true
+    });
+
+
+    $(".rpmknob").knob({
+        'format' : function (value) {
+            return value // + '\nRPM'
+            ;
+        },
+        readOnly: true,
+        max: 125000
+    });
+
+    $(".thrustknob").knob({
+        'format' : function (value) {
+            return value + 'N';
+        },
+        readOnly: true
+    });
+
+    $(".t1knob").knob({
+        'format' : function (value) {
+            return value + '\xB0C';
+        },
+        readOnly: true,
+        max: 250
+    });
+
+    $(".t2knob").knob({
+        'format' : function (value) {
+            return value + '\xB0C';
+        },
+        readOnly: true,
+        min: 900,
+        max: 999
+    });
+
+    $(".t3knob").knob({
+        'format' : function (value) {
+            return value + '\xB0C';
+        },
+        readOnly: true,
+        min: 550,
+        max: 750
+    });
+
+    $(".fuelknob").knob({
+        'format' : function (value) {
+            return value + 'l/h';
+        },
+        readOnly: true,
+        min: -2.5,
+        max: 30.
+    });
+
+    $(".P1knob").knob({
+        'format' : function (value) {
+            return value + 'bar';
+        },
+        readOnly: true,
+        min: -0.001,
+        max: 1.5
+    });
+
+    $(".airknob").knob({
+        'format' : function (value) {
+            return value + 'l/s';
+        },
+        readOnly: true,
+        min: 0.0,
+        max: 200.1
+    });
+
+    $(".idealefficiencyknob").knob({
+        'format' : function (value) {
+            return value + '%';
+        },
+        readOnly: true
+    });
+
+    $(".thermalknob").knob({
+        'format' : function (value) {
+            return value + 'kW';
+        },
+        readOnly: true,
+        min: 0.01,
+        max: 250.
+    });
+
+    $(".powerknob").knob({
+        'format' : function (value) {
+            return value + 'kW';
+        },
+        readOnly: true,
+        min: 0.01,
+        max: 100.
+    });
+
+    $(".actualefficiencyknob").knob({
+        'format' : function (value) {
+            return value + '%';
+        },
+        readOnly: true
+    });
+
+    function showVal(newVal){
+      document.getElementById("throttleValue").innerHTML=newVal;
+    }
+
+    var ThrottleChange = function() {
+        var throttle = r.getValue();
+
+        $('#throttleValue').html('<p>'+throttle+'</p>');
+
+        var rpm = throttle * 850. + 35000;
+        $("input.rpmknob").val(rpm);
+        $("input.rpmknob").trigger('change');
+
+        var thrust = 0.000000000031788143 * Math.pow(rpm,2.43907368);
+        $("input.thrustknob").val(thrust);
+        $("input.thrustknob").trigger('change');
+
+        var t1 = 15.70857646 * Math.exp(rpm * 0.00001565);
+        $("input.t1knob").val(t1);
+        $("input.t1knob").trigger('change');
+
+        var t2 = 0.0000000000000109739 * Math.pow(rpm, 3) + 0.0000000209465 * Math.pow(rpm, 2) - 0.00293895 * rpm + 1008.98
+        $("input.t2knob").val(t2);
+        $("input.t2knob").trigger('change');
+
+        var t3 = 0.000000000000159122 * Math.pow(rpm, 3) - 0.0000000150852 * Math.pow(rpm, 2) - 0.0000111699 * rpm + 606.651;
+        $("input.t3knob").val(t3);
+        $("input.t3knob").trigger('change');
+
+        var fuel = 2.72926 * Math.exp(0.0000180622 * rpm);
+        $("input.fuelknob").val(fuel);
+        $("input.fuelknob").trigger('change');
+
+        var P1 = 0.000000000000392356 * Math.pow(rpm, 2.46454);
+        $("input.P1knob").val(P1);
+        $("input.P1knob").trigger('change');
+
+        var air = 0.0000000000657113 * Math.pow(rpm, 2.45028);
+        $("input.airknob").val(air);
+        $("input.airknob").trigger('change');
+
+        var ideal_eff = 0.00000000052885 * Math.pow(rpm, 2.09546)
+        $("input.idealefficiencyknob").val(ideal_eff);
+        $("input.idealefficiencyknob").trigger('change');
+
+        var thermal_P = 9.46222 * fuel;
+        $("input.thermalknob").val(thermal_P);
+        $("input.thermalknob").trigger('change');
+
+        var actual_P = 0.00000000000647766 * Math.pow(rpm, 2.42786)
+        $("input.powerknob").val(actual_P);
+        $("input.powerknob").trigger('change');        
+
+        var actual_eff = 0.00000394249 * Math.pow(rpm, 1.23418)
+        $("input.actualefficiencyknob").val(actual_eff);
+        $("input.actualefficiencyknob").trigger('change');
+    };
+
+    var r = $('#throttle').slider()
+            		.on('slide', ThrottleChange)
+            		.data('slider');
+
+        </script>
+    </body>
+</html>
