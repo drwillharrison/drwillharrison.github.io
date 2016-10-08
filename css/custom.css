@@ -25,4 +25,5 @@ p {
 }
 .menu-button {
     padding: 10px;
+    position:absolute;
 }
